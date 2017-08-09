@@ -19,6 +19,6 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import './assets/common.scss'
+<style lang="less">
+@import './assets/common.less';
 </style>

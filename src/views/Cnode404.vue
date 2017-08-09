@@ -5,7 +5,7 @@
 </template>
 
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 div {
   width: 200px;
   height: 40px;

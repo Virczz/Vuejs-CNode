@@ -26,42 +26,45 @@
     </ul>
 </template>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
+@color_1: #80bd01;
+@color_2: #fff;
+
 .nav {
-  display: flex;
-  background: #f6f6f6;
-  width: 100%;
-  border-bottom: 1px solid #f0f0f0;
-  > li {
-    flex: 1;
-    text-align: center;
-    height: 40px;
-    line-height: 40px;
-    color: #80bd01;
-    position: relative;
-    ul {
-      border-top: 1px solid #f0f0f0;
-      li {
-        color: #80bd01;
-        background: #f6f6f6;
-        border-bottom: 1px solid #f0f0f0;
-      }
-    }
-    .message {
-      display: block;
-      width: 18px;
-      height: 18px;
-      background: #80bd01;
-      color: #fff;
-      text-align: center;
-      border-radius: 100%;
-      line-height: 18px;
-      position: absolute;
-      right: 20px;
-      top: 12px;
-      font-size: 12px;
-    }
-  }
+	display: flex;
+	background: #f6f6f6;
+	width: 100%;
+	border-bottom: 1px solid #f0f0f0;
+	>li {
+		flex: 1;
+		text-align: center;
+		height: 40px;
+		line-height: 40px;
+		color: @color_1;
+		position: relative;
+		ul {
+			border-top: 1px solid #f0f0f0;
+			li {
+				color: @color_1;
+				background: #f6f6f6;
+				border-bottom: 1px solid #f0f0f0;
+			}
+		}
+		.message {
+			display: block;
+			width: 18px;
+			height: 18px;
+			background: #80bd01;
+			color: @color_2;
+			text-align: center;
+			border-radius: 100%;
+			line-height: 18px;
+			position: absolute;
+			right: 20px;
+			top: 12px;
+			font-size: 12px;
+		}
+	}
 }
 </style>
 

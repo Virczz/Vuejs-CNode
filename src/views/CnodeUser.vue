@@ -15,7 +15,8 @@
        <div class="recent_topic">
             <h1>最近创建的话题</h1>
             <div>
-                <ul v-for="topic in user.recent_topics">
+                <ul v-for="(topic,index) in user.recent_topics"
+                    v-bind:key="index">
                     <li><img :src="topic.author.avatar_url"></li>
                     <li><router-link :to="'/topic/'+topic.id">{{topic.title}}</router-link></li>
                     <li>{{topic.last_reply_at|timeAgo}}</li>
@@ -25,7 +26,8 @@
        <div class="recent_topic">
             <h1>最近参与的话题</h1>
             <div>
-                <ul v-for="reply in user.recent_replies">
+                <ul v-for="(reply,index) in user.recent_replies"
+                    v-bind:key="index">
                     <li><img :src="reply.author.avatar_url"></li>
                     <li><router-link :to="'/topic/'+reply.id">{{reply.title}}</router-link></li>
                     <li>{{reply.last_reply_at|timeAgo}}</li>
@@ -40,101 +42,103 @@
 </template>
 
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
+@color_1: #000;
+@color_2: #08c;
+
 .load {
-  width: 100%;
-  line-height: 100px;
-  text-align: center;
-  img {
-    width: 40px;
-    margin: 40px auto;
-  }
+	width: 100%;
+	line-height: 100px;
+	text-align: center;
+	img {
+		width: 40px;
+		margin: 40px auto;
+	}
 }
-
 .userinfo {
-  width: 100%;
-  display: flex;
-  .collection {
-    width: 80px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    color: #000;
-    border-radius: 4px;
-    text-decoration: underline;
-  }
-  div {
-    flex: 3;
-    position: relative;
-    &:first-child {
-      flex: 1;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      img {
-        display: block;
-        max-width: 50%;
-      }
-    }
-    p {
-      font-size: 14px;
-      margin-bottom: 20px;
-      margin-top: 10px;
-      &:first-child {
-        font-weight: bold;
-      }
-    }
-  }
+	width: 100%;
+	display: flex;
+	.collection {
+		width: 80px;
+		height: 30px;
+		line-height: 30px;
+		text-align: center;
+		position: absolute;
+		right: 10px;
+		bottom: 10px;
+		color: @color_1;
+		border-radius: 4px;
+		text-decoration: underline;
+	}
+	div {
+		flex: 3;
+		position: relative;
+		&:first-child {
+			flex: 1;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			img {
+				display: block;
+				max-width: 50%;
+			}
+		}
+		p {
+			font-size: 14px;
+			margin-bottom: 20px;
+			margin-top: 10px;
+			&:first-child {
+				font-weight: bold;
+			}
+		}
+	}
+}
+.recent_topic {
+	margin-bottom: 20px;
+	h1 {
+		width: 100%;
+		text-indent: 20px;
+		line-height: 40px;
+		background: #eee;
+	}
+	div {
+		width: 100%;
+		ul {
+			width: 100%;
+			height: 40px;
+			line-height: 40px;
+			display: flex;
+			border-bottom: 1px solid #f0f0f0;
+			li {
+				flex: 1;
+				height: 40px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				&:nth-child(2) {
+					flex: 4;
+					overflow: hidden;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+				}
+				img {
+					height: 70%;
+					display: block;
+				}
+				a {
+					color: @color_2;
+					display: block;
+					width: 98%;
+					overflow: hidden;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+				}
+			}
+		}
+	}
 }
 
-.recent_topic {
-  margin-bottom: 20px;
-  h1 {
-    width: 100%;
-    text-indent: 20px;
-    line-height: 40px;
-    background: #eee;
-  }
-  div {
-    width: 100%;
-    ul {
-      width: 100%;
-      height: 40px;
-      line-height: 40px;
-      display: flex;
-      border-bottom: 1px solid #f0f0f0;
-      li {
-        flex: 1;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        &:nth-child(2) {
-          flex: 4;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-        }
-        img {
-          height: 70%;
-          display: block;
-        }
-        a {
-          color: #08c;
-          display: block;
-          width: 98%;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-        }
-      }
-    }
-  }
-}
 </style>
 
 

@@ -31,90 +31,97 @@
 </template>
 
 
-<style lang="scss" scoped>
-.list a {
-  display: flex;
-  border-bottom: 1px solid #f0f0f0;
-  &:visited {
-    color: #888;
-  }
-  .avatar {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    img {
-      width: 50%;
-    }
-  }
-  .main {
-    flex: 4;
-    color: #333;
-    li {
-      line-height: 20px;
-      margin: 8px 0;
-    }
-    .good {
-      padding: 4px;
-      border-radius: 4px;
-      background: #80bd01;
-      color: #fff;
-      text-align: center;
-      font-weight: bold;
-    }
-    .tab {
-      padding: 4px;
-      border-radius: 4px;
-      text-align: center;
-      background: #e5e5e5;
-      color: #999;
-      font-weight: bold;
-    }
-  }
-  .tips {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #333;
-    .reply-tips {
-      color: #9e78c0;
-    }
-    .visit-tips {
-      color: #b4b4b4;
-    }
-  }
-}
+<style lang="less" scoped>
+@color_1: #888;
+@color_2: #333;
+@color_3: #fff;
+@color_4: #999;
+@color_5: #9e78c0;
+@color_6: #b4b4b4;
 
+.list {
+	a {
+		display: flex;
+		border-bottom: 1px solid #f0f0f0;
+		&:visited {
+			color: @color_1;
+		}
+		.avatar {
+			flex: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			img {
+				width: 50%;
+			}
+		}
+		.main {
+			flex: 4;
+			color: @color_2;
+			li {
+				line-height: 20px;
+				margin: 8px 0;
+			}
+			.good {
+				padding: 4px;
+				border-radius: 4px;
+				background: #80bd01;
+				color: @color_3;
+				text-align: center;
+				font-weight: bold;
+			}
+			.tab {
+				padding: 4px;
+				border-radius: 4px;
+				text-align: center;
+				background: #e5e5e5;
+				color: @color_4;
+				font-weight: bold;
+			}
+		}
+		.tips {
+			flex: 1;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: @color_2;
+			.reply-tips {
+				color: @color_5;
+			}
+			.visit-tips {
+				color: @color_6;
+			}
+		}
+	}
+}
 .error {
-  width: 100%;
-  line-height: 100px;
-  text-align: center;
-  img {
-    width: 40px;
-    margin: 40px auto;
-  }
+	width: 100%;
+	line-height: 100px;
+	text-align: center;
+	img {
+		width: 40px;
+		margin: 40px auto;
+	}
 }
-
 .progress {
-  width: 100%;
-  img {
-    width: 40px;
-    margin: 10px auto;
-    display: block;
-  }
+	width: 100%;
+	img {
+		width: 40px;
+		margin: 10px auto;
+		display: block;
+	}
+}
+.toTop {
+	width: 25px;
+	height: 25px;
+	border-radius: 100%;
+	position: fixed;
+	right: 20px;
+	border: none;
+	top: 80%;
+	display: block;
 }
 
-.toTop {
-  width: 25px;
-  height: 25px;
-  border-radius: 100%;
-  position: fixed;
-  right: 20px;
-  border: none;
-  top: 80%;
-  display: block;
-}
 </style>
 
 <script>
