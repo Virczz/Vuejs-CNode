@@ -3,11 +3,11 @@
         <li @click="tabListDisplay=!tabListDisplay">
             {{currentTab}}<i class="triangle"></i>
             <ul v-show="tabListDisplay">
-                <router-link tag="li" :to="'/topics/all?t='+(+new Date())">全部</router-link>
-                <router-link tag="li" :to="'/topics/good?t='+(+new Date())">精华</router-link>
-                <router-link tag="li" :to="'/topics/share?t='+(+new Date())">分享</router-link>
-                <router-link tag="li" :to="'/topics/ask?t='+(+new Date())">问答</router-link>
-                <router-link tag="li" :to="'/topics/job?t='+(+new Date())">招聘</router-link>
+                <router-link tag="li" to="/topics/all">全部</router-link>
+                <router-link tag="li" to="/topics/good">精华</router-link>
+                <router-link tag="li" to="/topics/share">分享</router-link>
+                <router-link tag="li" to="/topics/ask">问答</router-link>
+                <router-link tag="li" to="/topics/job">招聘</router-link>
             </ul>
         </li>
 
